@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strconv"
 	"time"
 )
 
@@ -18,6 +19,10 @@ func main() {
 }
 
 func timeNowUnixToString(timestamp int64) string {
+	if timestamp == 0 {
+		n := time.Now().Unix()
+		return strconv.Itoa(int(n))
+	}
 	tm := time.Unix(timestamp, 0)
 	// fmt.Println(tm.Format("2006-01-02 03:04:05 PM")) // 两种格式化模式
 	// fmt.Println(tm.Format("02/01/2006 15:04:05 PM"))
