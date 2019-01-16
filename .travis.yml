@@ -1,0 +1,8 @@
+language: go
+
+go:
+  - "1.11"
+
+install: true
+
+script: echo hello1  && echo hello2
