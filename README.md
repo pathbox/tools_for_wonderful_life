@@ -9,3 +9,6 @@ Yeah, they are available in Linux and Mac OSX
 
 The goal is to build a convenient geeky and wonderful life
 
+## License
+
+MIT
