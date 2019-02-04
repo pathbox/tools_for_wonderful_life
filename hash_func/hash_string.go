@@ -58,3 +58,5 @@ func main() {
 }
 
 // 输出格式化为16进制后的字符串数据
+
+// hash_str -s=good
