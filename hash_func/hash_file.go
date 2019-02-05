@@ -10,6 +10,7 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"time"
 )
 
 var (
@@ -23,6 +24,8 @@ func init() {
 func main() {
 	var err error
 	f := *input
+
+	st := time.Now()
 
 	data, err := ioutil.ReadFile(f)
 	if err != nil {
@@ -62,7 +65,7 @@ func main() {
 	sha256Str := hex.EncodeToString(sha256Result)
 	sha512Str := hex.EncodeToString(sha512Result)
 
-	fmt.Printf("File Size: %dK\n\n", len(data)/1000)
+	fmt.Printf("File Size: %dK, time: %s\n\n", len(data)/1000, time.Since(st))
 	fmt.Printf("md5(%s) = len(%d) %s\n\n", f, len(md5Str), md5Str)
 	fmt.Printf("sha1(%s) = len(%d) %s\n\n", f, len(sha1Str), sha1Str)
 	fmt.Printf("sha256(%s) = len(%d) %s\n\n", f, len(sha256Str), sha256Str)
