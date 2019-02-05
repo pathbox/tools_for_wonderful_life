@@ -29,7 +29,7 @@ type Message struct {
 	Com       string
 	Status    string
 	State     string
-	Data      []Data
+	Datas     []Data `json:"data"`
 }
 
 func init() {
@@ -60,5 +60,7 @@ func main() {
 		os.Exit(-1)
 	}
 
-	fmt.Println(m)
+	for _, data := range m.Datas {
+		fmt.Printf("Time: %s---Info: %s\n", data.Time, data.Context)
+	}
 }
